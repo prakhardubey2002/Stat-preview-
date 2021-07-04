@@ -1,0 +1,114 @@
+:root{
+    --mainbgColor :  hsl(233, 47%, 7%);
+    --bgColor : hsl(244, 38%, 16%);
+    --headingColor : hsl(0, 0%, 100%);
+    --statHeading:hsla(0, 0%, 100%, 0.6);
+    --paraColor : hsla(0, 0%, 100%, 0.75);
+    --accentColor :  hsl(277, 64%, 61%);
+}
+body{
+    background-color: var(--mainbgColor);
+}
+/* *{
+    margin: 0%;
+    padding: 0;
+    box-sizing: border-box;
+} */
+.Container{
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    width: 80%;
+    overflow: hidden;
+    background-color:var(--bgColor);
+    margin: 10%;
+    border-radius: 0.5rem;
+}
+.Written{
+    padding: 10% 15%;
+}
+.Written .accentColor{
+    color: var(--accentColor);
+}
+.Written h1{
+    color: var(--headingColor);
+    font-family:  'Inter', 'sans-serif';
+}
+.Written p{
+    color: var(--paraColor);
+}
+.Statics h2{
+    margin: 0%;
+    color: var(--headingColor);
+    font-family:  'Inter', 'sans-serif';
+}
+.Statics{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+}
+.Statics p{
+    margin: 0%;
+    font-variant: small-caps;
+}
+.mobile{
+    display: none;
+}
+.img{
+    position: relative;
+    background-size: cover;
+    background-image: url('image-header-desktop.jpg');
+    width: 100%;
+    height: 100%;
+}
+.overlay{
+    position: absolute;
+    top: 0%;
+    left: 0%;
+    width: 100%;
+    height: 100%;
+    background-color: hsl(280deg 100% 30% / 50%);
+}
+p{
+    font-size: 14px;
+    font-family:  'Inter', 'sans-serif';
+    letter-spacing: 0.5px;
+    line-height: 180%;
+}
+h1{
+    font-family:  'Inter', 'sans-serif';
+}
+@media only screen and (max-width: 600px){
+    .img{
+        display: none;
+    }
+    .mobile{
+        position: relative;
+        display: block;
+        width: 100%;
+        height: 15rem;
+        background-image: url('image-header-mobile.jpg');
+        background-size: cover;
+    }
+    .Container{
+        grid-template-columns: repeat(1,1fr);
+        text-align: center;
+        width: 90%;
+        margin: 10% 5% ;
+    }
+    h1{
+        margin-top: 0%;
+        font-size: 170%;
+    }
+    .Written{
+        padding: 10%;
+        
+    }
+    .Statics{
+        grid-template-columns: repeat(1,1fr);
+    }
+    .Statics div{
+        margin-top: 10%;
+    }
+    .Statics div:first-child{
+        margin-top: 0%;
+    }
+}
